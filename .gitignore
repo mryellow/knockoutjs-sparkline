@@ -1,0 +1,8 @@
+.DS_Store
+.idea/*
+build/*
+node_modules/*
+bower_components/*
+*.iml
+*.sublime-project
+*.sublime-workspace

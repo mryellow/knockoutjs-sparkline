@@ -1,0 +1,26 @@
+{
+  "name": "knockoutjs-sparkline",
+  "version": "1.0.1",
+  "homepage": "https://github.com/mryellow/knockoutjs-sparkline",
+  "authors": [
+    "mryellow <mr-yellow@mr-yellow.com>"
+  ],
+  "description": "KnockoutJS custom binding for Omnipotent jQuery Sparkline",
+  "main": "src/knockoutjs-sparkline.min.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "knockoutjs",
+    "sparkline",
+    "graph"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
