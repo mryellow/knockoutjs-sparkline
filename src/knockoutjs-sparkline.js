@@ -3,11 +3,6 @@
  *
  * @author: Mr-Yellow <mr-yellow@mr-yellow.com>
  */
-define(['jquery','knockout','moment','sparkline'], function($,ko, moment) {
-
-/**
- * Sparkline custom binding
- */
 ko.bindingHandlers.sparkLine = {
 
     data: [],
@@ -117,4 +112,3 @@ ko.bindingHandlers.sparkLine = {
     }
 
 };
-});
