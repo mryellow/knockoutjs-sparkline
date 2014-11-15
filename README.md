@@ -7,7 +7,8 @@ KnockoutJS custom binding for Omnipotent jQuery Sparkline
 
 * [http://jquery.com/](http://jquery.com/)
 * [http://knockoutjs.com/](http://knockoutjs.com/)
-* [http://omnipotent.net/jquery.sparkline/](http://omnipotent.net/jquery.sparkline/)
+* [http://omnipotent.net/jquery.sparkline/](http://omnipotent.net/jquery.sparkline/) Ego refused bower.
+* [https://github.com/relayfoods/jquery.sparkline](https://github.com/relayfoods/jquery.sparkline) Project rebirthed with Bower.
 * [http://momentjs.com/](http://momentjs.com/)
 
 ### Extended options

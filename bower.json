@@ -27,6 +27,7 @@
     "tests"
   ],
   "dependencies": {
-    "moment": "~2.8.3"
+    "moment": "~2.8.3",
+    "relayfoods-jquery.sparkline": "~2.1.4"
   }
 }

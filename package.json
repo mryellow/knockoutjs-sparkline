@@ -2,7 +2,10 @@
   "name": "knockoutjs-sparkline",
   "version": "1.0.1",
   "description": "KnockoutJS custom binding for Omnipotent jQuery Sparkline",
-  "main": "dist/knockoutjs-sparkline.min.js",
+  "main": [
+    "dist/knockoutjs-sparkline.css",
+    "dist/knockoutjs-sparkline.min.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
