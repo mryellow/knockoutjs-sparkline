@@ -8,8 +8,8 @@ ko.bindingHandlers.sparkLine = {
     data: [],
     defaults: {
         type: 'line',
-        height: '22px',
-        width: '80px',
+        height: 'auto',
+        width: 'auto',
         fillColor: '#72e572',
         lineColor: '#000000',
         spotColor: '#f08000',
