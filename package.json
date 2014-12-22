@@ -1,6 +1,6 @@
 {
   "name": "knockoutjs-sparkline",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "KnockoutJS custom binding for Omnipotent jQuery Sparkline",
   "main": [
     "dist/knockoutjs-sparkline.css",
