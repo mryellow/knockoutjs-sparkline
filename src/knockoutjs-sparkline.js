@@ -77,9 +77,12 @@ ko.bindingHandlers.sparkLine = {
         /**
          * Recalculate window.
          */
-        var now = new Date().getTime();
-        ko.bindingHandlers.sparkLine.defaults.chartRangeMinX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMin;
-        ko.bindingHandlers.sparkLine.defaults.chartRangeMaxX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMax;
+        if (ko.bindingHandlers.sparkLine.defaults.timeWindowMin && ko.bindingHandlers.sparkLine.defaults.timeWindowMax) {
+	        var now = new Date().getTime();
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeMinX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMin;
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeMaxX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMax;
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeClipX = true;
+	    }
 
         /**
          * Initalise sparkline.
@@ -103,10 +106,16 @@ ko.bindingHandlers.sparkLine = {
         /**
          * Recalculate window.
          */
-        var now = new Date().getTime();
-        ko.bindingHandlers.sparkLine.defaults.chartRangeMinX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMin;
-        ko.bindingHandlers.sparkLine.defaults.chartRangeMaxX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMax;
+        if (ko.bindingHandlers.sparkLine.defaults.timeWindowMin && ko.bindingHandlers.sparkLine.defaults.timeWindowMax) {
+	        var now = new Date().getTime();
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeMinX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMin;
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeMaxX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMax;
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeClipX = true;
+	    }
 
+		/**
+         * Reinitalise sparkline.
+         */
         $(element).sparkline(ko.bindingHandlers.sparkLine.data, ko.bindingHandlers.sparkLine.defaults);
 
     }
