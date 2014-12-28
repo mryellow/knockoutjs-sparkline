@@ -27,8 +27,6 @@ ko.bindingHandlers.sparkLine = {
             console.log([fields.x,fields.y]);
             return ko.bindingHandlers.sparkLine.epochToLocal(fields.x) + ': ' + fields.y;
         },
-        timeWindowMin: (60*60*4*1000),
-        timeWindowMax: (60*1000),
         dateFormat: 'LLLL'
     },
     epochToLocal: function(epoch) {
@@ -113,7 +111,7 @@ ko.bindingHandlers.sparkLine = {
 	        ko.bindingHandlers.sparkLine.defaults.chartRangeClipX = true;
 	    }
 
-		/**
+        /**
          * Reinitalise sparkline.
          */
         $(element).sparkline(ko.bindingHandlers.sparkLine.data, ko.bindingHandlers.sparkLine.defaults);
