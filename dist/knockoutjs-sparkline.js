@@ -23,8 +23,6 @@ ko.bindingHandlers.sparkLine = {
             console.log([fields.x,fields.y]);
             return ko.bindingHandlers.sparkLine.epochToLocal(fields.x) + ': ' + fields.y;
         },
-        timeWindowMin: (60*60*4*1000),
-        timeWindowMax: (60*1000),
         dateFormat: 'LLLL'
     },
     epochToLocal: function(epoch) {
@@ -73,9 +71,12 @@ ko.bindingHandlers.sparkLine = {
         /**
          * Recalculate window.
          */
-        var now = new Date().getTime();
-        ko.bindingHandlers.sparkLine.defaults.chartRangeMinX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMin;
-        ko.bindingHandlers.sparkLine.defaults.chartRangeMaxX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMax;
+        if (ko.bindingHandlers.sparkLine.defaults.timeWindowMin && ko.bindingHandlers.sparkLine.defaults.timeWindowMax) {
+	        var now = new Date().getTime();
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeMinX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMin;
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeMaxX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMax;
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeClipX = true;
+	    }
 
         /**
          * Initalise sparkline.
@@ -99,10 +100,16 @@ ko.bindingHandlers.sparkLine = {
         /**
          * Recalculate window.
          */
-        var now = new Date().getTime();
-        ko.bindingHandlers.sparkLine.defaults.chartRangeMinX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMin;
-        ko.bindingHandlers.sparkLine.defaults.chartRangeMaxX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMax;
+        if (ko.bindingHandlers.sparkLine.defaults.timeWindowMin && ko.bindingHandlers.sparkLine.defaults.timeWindowMax) {
+	        var now = new Date().getTime();
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeMinX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMin;
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeMaxX = now - ko.bindingHandlers.sparkLine.defaults.timeWindowMax;
+	        ko.bindingHandlers.sparkLine.defaults.chartRangeClipX = true;
+	    }
 
+        /**
+         * Reinitalise sparkline.
+         */
         $(element).sparkline(ko.bindingHandlers.sparkLine.data, ko.bindingHandlers.sparkLine.defaults);
 
     }
