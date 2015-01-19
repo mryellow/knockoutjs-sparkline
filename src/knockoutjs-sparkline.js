@@ -45,6 +45,8 @@ ko.bindingHandlers.sparkLine = {
         var observable = valueAccessor() || { };
         var unwrapped = ko.unwrap(observable);
 
+        var responsiveTimer = 0;
+
         ko.bindingHandlers.sparkLine.data = unwrapped;
         
         if (allBindingsAccessor().hasOwnProperty('sparkType')) ko.bindingHandlers.sparkLine.defaults.type = allBindingsAccessor().sparkType;
@@ -85,7 +87,16 @@ ko.bindingHandlers.sparkLine = {
         /**
          * Initalise sparkline.
          */
-        $(element).sparkline(ko.bindingHandlers.sparkLine.data, ko.bindingHandlers.sparkLine.defaults);
+        var sparkResize;
+        var sparklineInit = function() {
+        	$(element).sparkline(ko.bindingHandlers.sparkLine.data, ko.bindingHandlers.sparkLine.defaults);
+        }
+	
+	$(window).resize(function(e) {
+		clearTimeout(sparkResize);
+		sparkResize = setTimeout(sparklineInit, 500);
+	});
+	sparklineInit();
 
         //return { controlsDescendantBindings: true };
     },
